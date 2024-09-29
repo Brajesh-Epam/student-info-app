@@ -1,0 +1,25 @@
+<div class="home-page-main-container" role="main" aria-labelledby="main-heading">
+  <h1 id="main-heading" class="heading">Student Info App</h1>
+
+  <div role="group" aria-label="Student Information Actions">
+    <button 
+      type="button" 
+      class="button" 
+      [class.active]="activeButton === 'add'" 
+      (click)="redirectURL('add')" 
+      [attr.aria-pressed]="activeButton === 'add' ? 'true' : 'false'">
+      Add Student Information
+    </button>
+    
+    <button 
+      type="button" 
+      class="button" 
+      [class.active]="activeButton === 'view'" 
+      (click)="redirectURL('view')" 
+      [attr.aria-pressed]="activeButton === 'view' ? 'true' : 'false'">
+      View Student Information
+    </button>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,52 @@
+<div class="add-student-input-form">
+    <form [formGroup]="studentForm" (ngSubmit)="updateStudent()">
+        <fieldset>
+            <legend>Update Student Information</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="student-id">Student ID:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="student-id" formControlName="student-id" readonly aria-readonly="true">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="student-name">Student Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="student-name" formControlName="student-name" required aria-required="true">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="student-age">Student Age:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="student-age" formControlName="student-age" required min="18" max="100" aria-required="true">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="course-enrolled">Course Enrolled:</label>
+                    </td>
+                    <td>
+                        <input type="text" formControlName="course-enrolled" id="course-enrolled" required aria-required="true">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="student-email">Student Email:</label>
+                    </td>
+                    <td>
+                        <input type="email" id="student-email" formControlName="student-email" required aria-required="true">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <div class="button-container">
+            <button type="submit">Update Student</button>
+        </div>
+    </form>
+</div>

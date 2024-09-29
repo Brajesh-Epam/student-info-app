@@ -1,0 +1,39 @@
+<table>
+    <caption>Student Information</caption>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            <th scope="col">Course Enrolled</th>
+            <th scope="col" aria-label="Edit Actions">Edit</th>
+            <th scope="col" aria-label="Delete Actions">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let val of studentData; trackBy: trackById">
+            <td>{{ val['student-id'] }}</td>
+            <td>{{ val['student-name'] }}</td>
+            <td>{{ val['student-age'] }}</td>
+            <td>{{ val['student-email'] }}</td>
+            <td>{{ val['course-enrolled'] }}</td> 
+            <td>
+                <button 
+                    type="button" 
+                    (click)="editData(val['student-id'])" 
+                    [attr.aria-label]="'Edit student ' + val['student-name']">
+                    Edit
+                </button>
+            </td>
+            <td>
+                <button 
+                    type="button" 
+                    (click)="deleteData(val['student-id'])" 
+                    [attr.aria-label]="'Delete student ' + val['student-name']">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
